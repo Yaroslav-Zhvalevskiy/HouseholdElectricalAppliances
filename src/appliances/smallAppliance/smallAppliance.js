@@ -1,4 +1,4 @@
-const Appliance = require('./appliance');
+const Appliance = require('../appliance');
 
 class SmallAppliance extends Appliance {
     constructor(type, name, manufacturer, cost, power, switched, usability) {

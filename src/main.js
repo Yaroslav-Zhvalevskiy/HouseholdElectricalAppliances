@@ -1,6 +1,6 @@
-let LargeAppliance = require('./appliances/largeAppliance');
+let LargeAppliance = require('./appliances/largeAppliance/largeAppliance');
 let SmallAppliance = require('./appliances/smallAppliance');
-let ConsumerElectronics = require('./appliances/consumerElectronics');
+let ConsumerElectronics = require('./appliances/consumerElectronics/consumerElectronics');
 let FlatBuilder = require('./data/flatBuilder');
 
 let appliances = [
