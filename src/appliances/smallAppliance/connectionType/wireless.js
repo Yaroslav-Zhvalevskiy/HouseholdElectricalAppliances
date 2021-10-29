@@ -1,9 +1,9 @@
-const SmallAppliance = require('./smallAppliance');
+const SmallAppliance = require('../smallAppliance');
 
 class WirelessSmallAppliance extends SmallAppliance {
-    constructor(type, name, manufacturer, cost, power, switched, usability, chargingStation) {
+    constructor(type, name, manufacturer, cost, power, switched, usability, chargingTime) {
         super(type, name, manufacturer, cost, power, switched, usability);
-        this.chargingStation = chargingStation;
+        this.chargingTime = chargingTime;
     }
 }
 

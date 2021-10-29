@@ -7,6 +7,18 @@ class Appliance {
         this.power = power;
         this.switched = switched;
     }
+
+    switchOn() {
+        this.switched = true;
+    }
+
+    switchOff() {
+        this.switched = false;
+    }
+
+    getType() {
+        return this.type;
+    }
 }
 
 module.exports = Appliance;
