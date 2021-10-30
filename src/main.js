@@ -34,16 +34,43 @@ let flat = new FlatBuilder()
     .build();
 
 (async () => {
-    flat.showAppliances();
-    flat.showTypesOfAppliances();
-    let choise;
-    while (choise != 'count') {
-        choise = await prompt('Select the appliance you want to turn on \
-or enter "count" to calculate the power consumption of all the turned on appliances: ');
-        flat.switchOn(choise);
+    let item;
+    while (item != 7) {
+        console.log('Menu:');
+        console.log('1. Show the full list of appliances');
+        console.log('2. Show all types of appliances');
+        console.log('3. Turn on the appliances');
+        console.log('4. Calculate the power consumption of all the turned on appliances');
+        console.log('5. Sort appliances by price');
+        console.log('6. Show appliances corresponding to a specific manufacturer');
+        console.log('7. Exit the program');
+        item = parseInt(await prompt('Select a menu item: '));
+        switch (item) {
+            case 1:
+                flat.showAppliances();
+                break;
+            case 2:
+                flat.showTypesOfAppliances();
+                break;
+            case 3:
+                let choise = await prompt('Select the appliance you want to turn on: ');
+                flat.switchOn(choise);
+                break;
+            case 4:
+                console.log(`The power consumption of all the turned on appliances in the flat is equal to ${flat.countPower()} watt`);
+                break;
+            case 5:
+                console.log('Appliances sorted by price: ');
+                flat.sortByPrice();
+                break;
+            case 6:
+                let param = await prompt('Select the manufacturer by which you want to find the appliances: ');
+                console.log(`Appliances corresponding to the selected manufacturer - ${param}: `);
+                flat.findAppliance(param);
+                break;
+            case 7:
+                break;
+        }
     }
-    console.log(`The power consumption of all the turned on appliances in the flat is equal to ${flat.countPower()} watt`);
-    console.log('Appliances sorted by price: ');
-    flat.sortByPrice();
     prompt.finish();
 })()

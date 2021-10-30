@@ -5,7 +5,7 @@ class Flat {
 
     showAppliances() {
         console.log('The flat has the following list of electrical appliances:');
-        console.log(this.appliancesList);
+        console.log(JSON.stringify(this.appliancesList));
     }
 
     showTypesOfAppliances() {
@@ -41,7 +41,17 @@ class Flat {
 
     sortByPrice() {
         this.appliancesList.forEach((el) => {
-            console.log(el.sort((a, b) => b.cost - a.cost));
+            console.log(JSON.stringify(el.sort((a, b) => b.cost - a.cost)));
+        })
+    }
+
+    findAppliance(parameter) {
+        this.appliancesList.forEach((el) => {
+            el.forEach((el) => {
+                if (el.manufacturer === parameter) {
+                    console.log(JSON.stringify(el));
+                }
+            })
         })
     }
 }
