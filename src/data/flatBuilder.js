@@ -11,7 +11,7 @@ class FlatBuilder {
     }
 
     addApplianceList(appliances) {
-        this.flat.appliancesList = [...this.appliancesList, ...appliances];
+        this.flat.appliancesList = [...this.flat.appliancesList, ...appliances];
         return this;
     }
 

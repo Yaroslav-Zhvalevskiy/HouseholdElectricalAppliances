@@ -30,7 +30,7 @@ let appliances = [
 ];
 
 let flat = new FlatBuilder()
-    .addAppliance(appliances)
+    .addApplianceList(appliances)
     .build();
 
 (async () => {
